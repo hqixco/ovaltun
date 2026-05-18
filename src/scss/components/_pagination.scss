@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination__item,
+.pagination__button {
+  @include flex-center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: $color-white;
+  border: 1px solid $color-border;
+  color: $color-brand;
+  transition: 0.2s ease;
+}
+
+.pagination__item--active {
+  background: $color-brand;
+  color: $color-white;
+}
+
+.pagination__item--dots {
+  border-color: transparent;
+  background: transparent;
+}
+
+.pagination__button--disabled,
+.pagination__button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination__item:hover,
+.pagination__button:hover:not(:disabled) {
+  border-color: $color-primary;
+  color: $color-primary;
+  transform: translateY(-1px);
+}

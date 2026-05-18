@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-border-dark;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $color-white;
+}
+
+.quantity-stepper__button {
+  @include flex-center;
+  width: 36px;
+  height: 44px;
+  background: $color-card-bg;
+  color: $color-brand;
+}
+
+.quantity-stepper__input {
+  width: 36px;
+  height: 44px;
+  border: 0;
+  text-align: center;
+  color: $color-text;
+  background: $color-white;
+}

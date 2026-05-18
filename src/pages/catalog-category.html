@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ОВАЛТУН - Плитка керамическая</title>
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body class="page page--catalog-category">
+    <div data-include="/partials/header.html"></div>
+
+    <main class="page__main catalog-category">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <div class="container container--narrow">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="/src/pages/index.html">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="/src/pages/catalog.html">Каталог</a></li>
+            <li class="breadcrumbs__item" aria-current="page">Плитка керамическая</li>
+          </ol>
+        </div>
+      </nav>
+
+      <section class="section section--compact">
+        <div class="container container--narrow">
+          <h1 class="h1">Плитка керамическая</h1>
+        </div>
+      </section>
+
+      <section class="section catalog-category__subcategories">
+        <div class="container container--narrow">
+          <div class="catalog-category__subcategories-track">
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Керамогранит</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Плитка кафельная</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Керамогранит квадро декор-контакт</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Плитка кафельная</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Керамогранит грани таганая</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+            <article class="catalog-category__subcategory">
+              <h2 class="catalog-category__subcategory-title">Керамогранит прогресс (м2)</h2>
+              <div class="catalog-category__subcategory-media">Image</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container container--narrow">
+          <div class="catalog-category__layout">
+            <div class="catalog-category__sidebar catalog-category__filter-panel" data-filter-panel>
+              <div class="catalog__filter-overlay catalog-category__filter-overlay" data-filter-close></div>
+              <div data-include="/partials/filter.html"></div>
+            </div>
+
+            <div class="catalog-category__content">
+              <div class="catalog-category__toolbar">
+                <div class="catalog-category__toolbar-info">
+                  <button class="button button--secondary catalog-category__mobile-filter-btn" type="button" data-filter-open>
+                    Фильтр
+                  </button>
+                  <span class="catalog-category__toolbar-count">6178 товаров</span>
+                </div>
+
+                <div class="catalog-category__toolbar-controls">
+                  <label class="visually-hidden" for="catalog-category-sort">Сортировка</label>
+                  <select class="catalog-category__sort" id="catalog-category-sort">
+                    <option>Название от А-Я</option>
+                    <option>Сначала популярные</option>
+                    <option>Сначала дешёвые</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="catalog-category__products">
+                <div class="catalog-category__grid">
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                  <div data-include="/partials/catalog-category-product-card.html"></div>
+                </div>
+
+                <div class="catalog-category__pagination">
+                  <nav class="pagination" aria-label="Пагинация">
+                    <button class="pagination__button pagination__button--disabled" type="button" disabled aria-label="Предыдущая страница">
+                      ←
+                    </button>
+                    <a class="pagination__item pagination__item--active" href="#" aria-current="page">1</a>
+                    <a class="pagination__item" href="#">2</a>
+                    <a class="pagination__item" href="#">3</a>
+                    <a class="pagination__item" href="#">4</a>
+                    <a class="pagination__item" href="#">5</a>
+                    <span class="pagination__item pagination__item--dots">...</span>
+                    <a class="pagination__item" href="#">206</a>
+                    <button class="pagination__button" type="button" aria-label="Следующая страница">→</button>
+                  </nav>
+                </div>
+              </div>
+
+              <section class="catalog-category__seo">
+                <h2 class="catalog-category__seo-title">SEO text</h2>
+                <p>
+                  Страница категории для ручной верстки и дальнейшего наполнения контентом. Здесь собраны фильтр, товары,
+                  пагинация и вспомогательные элементы для каталожного сценария.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div data-include="/partials/footer.html"></div>
+    <div data-include="/partials/modal.html"></div>
+  </body>
+</html>

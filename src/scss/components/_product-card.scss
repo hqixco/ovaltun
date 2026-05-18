@@ -1,0 +1,150 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 16px;
+  background: $color-white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.product-card__media {
+  height: 295px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 12px 20px 12px;
+}
+
+.product-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  border: 1px dashed $color-border-dark;
+  border-radius: 16px;
+  background: transprent;
+  color: $color-muted;
+  font-size: 14px;
+}
+
+.product-card__media .product-card__placeholder {
+  min-height: 100%;
+  border: 0;
+}
+
+.product-card__badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.product-card__favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+  border-radius: 360px;
+  color: $color-brand;
+}
+
+.product-card__favorite-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.product-card__title {
+  font-size: 18px;
+  color: $color-text;
+}
+
+.product-card__meta {
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.product-card__prices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.product-card__price-item {
+  display: grid;
+  gap: 6px;
+}
+
+.product-card__price-label {
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.product-card__price {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.product-card__retail-price {
+  font-size: 20px;
+  color: $color-text;
+  font-weight: 500;
+}
+
+.product-card__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.product-card__button {
+  height: 37px;
+  min-height: 37px;
+  flex: 1 1 auto;
+  font-weight: 400;
+}
+
+.product-card__favorite.is-active {
+  background: $color-success;
+  color: $color-white;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+}
+
+.product-card__media,
+.product-card__favorite,
+.product-card__button {
+  transition: 0.2s ease;
+}
+
+.product-card__button:hover {
+  background: $color-brand;
+  color: $color-white;
+}
+
+.product-card__favorite:hover {
+  border-color: #f04438;
+  color: #f04438;
+}

@@ -1,0 +1,175 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.page--certificates {
+  background: $color-white;
+}
+
+.certificates-page {
+  padding-bottom: 72px;
+}
+
+.certificates-page .breadcrumbs {
+  margin-top: 12px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: $color-muted;
+}
+
+.certificates-page .breadcrumbs__link {
+  color: $color-muted;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.certificates-page .breadcrumbs__link:hover {
+  color: $color-primary;
+}
+
+.certificates-page__title {
+  margin: 0 0 32px;
+  color: $color-text;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.certificates-page__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 28px;
+  margin-bottom: 72px;
+}
+
+.certificate-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: $color-card-bg;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.certificate-card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.certificate-card--vertical {
+  aspect-ratio: 1 / 1.22;
+}
+
+.certificate-card--horizontal {
+  aspect-ratio: 1.52 / 1;
+}
+
+.certificate-card--vertical .certificate-card__image {
+  background-color: #f8f5ea;
+  background-image:
+    linear-gradient(90deg, rgba(150, 132, 88, 0.35) 0 10px, transparent 10px calc(100% - 10px), rgba(150, 132, 88, 0.35) calc(100% - 10px)),
+    radial-gradient(circle at center 18%, rgba(190, 170, 90, 0.25), transparent 24%),
+    linear-gradient(180deg, transparent 0 28%, rgba(255, 255, 255, 0.85) 28% 72%, transparent 72%);
+}
+
+.certificate-card--vertical .certificate-card__image::before {
+  content: 'СЕРТИФИКАТ';
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  color: #4f4f4f;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.certificate-card--horizontal .certificate-card__image {
+  background-color: #f7f8fb;
+  background-image:
+    linear-gradient(0deg, rgba(88, 108, 132, 0.35) 0 12px, transparent 12px calc(100% - 12px), rgba(88, 108, 132, 0.35) calc(100% - 12px)),
+    linear-gradient(90deg, rgba(88, 108, 132, 0.35) 0 12px, transparent 12px calc(100% - 12px), rgba(88, 108, 132, 0.35) calc(100% - 12px));
+}
+
+.certificate-card--horizontal .certificate-card__image::before {
+  content: 'СЕРТИФИКАТ';
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  transform: translateX(-50%);
+  color: #626b76;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+@media (max-width: 1279px) {
+  .certificates-page__grid {
+    gap: 24px;
+  }
+
+  .certificate-card--vertical .certificate-card__image::before {
+    font-size: 20px;
+  }
+
+  .certificate-card--horizontal .certificate-card__image::before {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .certificates-page__title {
+    font-size: 36px;
+  }
+
+  .certificates-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .certificates-page {
+    padding-bottom: 48px;
+  }
+
+  .certificates-page__title {
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  .certificates-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 14px;
+    margin-bottom: 48px;
+  }
+
+  .certificate-card--vertical .certificate-card__image::before {
+    font-size: 14px;
+  }
+
+  .certificate-card--horizontal .certificate-card__image::before {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 479px) {
+  .certificates-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

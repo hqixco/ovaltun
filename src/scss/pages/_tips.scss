@@ -1,0 +1,109 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.page--tips {
+  padding-bottom: 24px;
+}
+
+.tips-page__breadcrumbs {
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+.tips-page__title {
+  margin-bottom: 32px;
+}
+
+.tips-page__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.tips-card {
+  display: grid;
+  gap: 12px;
+}
+
+.tips-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.tips-card__image {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background-color: $color-card-bg;
+  background-image:
+    linear-gradient(135deg, rgba($color-brand, 0.08) 0 16%, transparent 16% 100%),
+    linear-gradient(45deg, transparent 0 45%, rgba($color-primary, 0.18) 46% 50%, transparent 51% 100%),
+    linear-gradient(180deg, rgba($color-white, 0.65), rgba($color-white, 0));
+  background-size: cover;
+}
+
+.tips-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  min-height: 22px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+
+.tips-card__body {
+  display: grid;
+  gap: 8px;
+}
+
+.tips-card__title {
+  margin: 0;
+  color: $color-text;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.tips-card__text {
+  margin: 0;
+  color: $color-text;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.tips-page__pagination {
+  margin-bottom: 72px;
+}
+
+.tips-page__pagination .pagination {
+  justify-content: center;
+}
+
+@media (max-width: 1439px) {
+  .tips-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .tips-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .tips-page__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .tips-card__title {
+    font-size: 15px;
+  }
+
+  .tips-card__text {
+    font-size: 13px;
+  }
+}

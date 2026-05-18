@@ -1,0 +1,254 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.page--design-projects {
+  background: $color-white;
+}
+
+.design-projects-page {
+  padding-bottom: 72px;
+}
+
+.design-projects-page .breadcrumbs {
+  margin-top: 12px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: $color-muted;
+}
+
+.design-projects-page .breadcrumbs__link {
+  color: $color-muted;
+  text-decoration: none;
+}
+
+.design-projects-page .breadcrumbs__link:hover {
+  color: $color-primary;
+}
+
+.design-projects-page__title {
+  margin: 0 0 32px;
+  color: $color-text;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.design-projects-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 24px;
+  padding: 34px 38px;
+  border-radius: 4px;
+  background: $color-card-bg;
+}
+
+.design-projects-cta__title {
+  margin: 0 0 8px;
+  color: $color-text;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.design-projects-cta__text {
+  margin: 0;
+  color: $color-text;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.design-projects-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  height: 44px;
+  padding: 0 28px;
+  border-radius: 4px;
+  background: $color-primary;
+  color: $color-white;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.design-projects-cta__button:hover {
+  opacity: 0.9;
+}
+
+.design-projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 150px;
+  gap: 16px;
+  margin-bottom: 72px;
+}
+
+.design-project-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #d8dde4;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.design-project-card:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.design-project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+.design-project-card__label {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2;
+  max-width: 220px;
+  color: $color-white;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.design-project-card--large {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.design-project-card--wide {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.design-project-card--tall {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.design-project-card--medium {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.design-project-card--blue {
+  background-image:
+    linear-gradient(135deg, rgba(0, 83, 130, 0.35), rgba(0, 0, 0, 0.1)),
+    linear-gradient(45deg, #0e4c7a 0%, #1b7eb5 35%, #d6b15c 36%, #174c78 38%, #0e3356 100%);
+}
+
+.design-project-card--bath {
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.15)),
+    linear-gradient(110deg, #d8d6d2 0%, #f2f0ec 35%, #b7b1aa 100%);
+}
+
+.design-project-card--wood {
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.08)),
+    repeating-linear-gradient(12deg, #7b5638 0 18px, #9b7652 18px 36px, #6e4c32 36px 54px);
+}
+
+.design-project-card--gray {
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.12)),
+    linear-gradient(110deg, #c7c4bd 0%, #efede8 45%, #9f9c96 100%);
+}
+
+.design-project-card--floor {
+  background-image:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.08)),
+    linear-gradient(110deg, #5f6469 0%, #9aa0a5 50%, #d5d8da 100%);
+}
+
+@media (max-width: 1279px) {
+  .design-projects-gallery {
+    grid-auto-rows: 130px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .design-projects-page__title {
+    font-size: 36px;
+  }
+
+  .design-projects-cta {
+    padding: 28px;
+  }
+
+  .design-projects-gallery {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 130px;
+  }
+
+  .design-project-card--large,
+  .design-project-card--tall {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .design-project-card--wide,
+  .design-project-card--medium {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .design-projects-page {
+    padding-bottom: 48px;
+  }
+
+  .design-projects-page__title {
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  .design-projects-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 24px 18px;
+  }
+
+  .design-projects-cta__title {
+    font-size: 22px;
+  }
+
+  .design-projects-cta__button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .design-projects-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .design-project-card,
+  .design-project-card--large,
+  .design-project-card--wide,
+  .design-project-card--tall,
+  .design-project-card--medium {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
+}

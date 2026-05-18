@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.container {
+  max-width: $container-xl;
+  margin: 0 auto;
+}
+
+.container--narrow {
+  max-width: $container-lg;
+}
+
+@include mq-down($breakpoint-mobile) {
+  .container {
+    padding: 0 $container-padding-mobile;
+  }
+}
+

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ОВАЛТУН - Результаты поиска</title>
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body class="page page--search">
+    <div data-include="/partials/header.html"></div>
+
+    <main class="search-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a class="breadcrumbs__link" href="/">Главная</a>
+          <span class="breadcrumbs__separator" aria-hidden="true">-</span>
+          <span class="breadcrumbs__current">Поиск</span>
+        </nav>
+
+        <h1 class="search-page__title">Результаты поиска</h1>
+
+        <div class="search-page__summary">
+          По вашему запросу найдено: <span>12 позиций</span>
+        </div>
+
+        <div class="search-page__toolbar">
+          <label class="search-page__sort" for="search-sort">
+            <span>Сортировать:</span>
+            <select id="search-sort">
+              <option>Название от А-Я</option>
+              <option>Название от Я-А</option>
+              <option>Сначала дешевле</option>
+              <option>Сначала дороже</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="search-page__grid">
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+          <div data-include="/partials/product-card.html"></div>
+        </div>
+
+        <div data-include="/partials/pagination.html"></div>
+      </div>
+    </main>
+
+    <div data-include="/partials/footer.html"></div>
+    <div data-include="/partials/modal.html"></div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.slider {
+  position: relative;
+}
+
+.slider__viewport {
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.slider__track,
+.slider__track * {
+  -webkit-user-drag: none;
+}
+
+.slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.slider__track.is-dragging .slider__slide {
+  pointer-events: none;
+}
+
+.slider__slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 auto;
+}
+
+.slider__controls {
+  position: absolute;
+  inset: 50% 0 auto;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+  padding: 0 10px;
+}
+
+.slider__button {
+  @include flex-center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: $color-card-bg;
+  color: $color-brand;
+  box-shadow: 0 8px 20px rgba($color-brand-dark, 0.12);
+  pointer-events: auto;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.slider__button-icon {
+  display: block;
+  width: 7px;
+  height: 12px;
+  flex: 0 0 auto;
+}
+
+.slider__button-icon--next {
+  transform: rotate(180deg);
+}
+
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.slider__dot {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: $color-border-dark;
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.slider__dot--active {
+  width: 40px;
+  background: $color-brand;
+}
+
+.slider__button:hover {
+  transform: scale(1.05);
+  background: $color-white;
+}
+
+.slider__button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.slider__button:focus-visible,
+.slider__dot:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
