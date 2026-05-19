@@ -19,6 +19,7 @@ import { initDeliveryCalculation } from './modules/delivery-calculation.js';
 import { initCustomersPage } from './modules/customers-page.js';
 import { initFavorites } from './modules/favorite.js';
 import { initCatalogFilter } from './modules/catalog-filter.js';
+import { initSearchPage } from './modules/search-page.js';
 
 async function fetchInclude(path) {
   const candidates = [path, path.replace('/partials/', '/src/partials/')];
@@ -67,6 +68,7 @@ async function bootstrap() {
   initCustomersPage();
   initFavorites();
   initCatalogFilter();
+  initSearchPage();
 }
 
 if (document.readyState === 'loading') {
