@@ -10,7 +10,7 @@
     <div data-include="/partials/header.html"></div>
 
     <main class="page__main page--customers">
-      <div class="container">
+      <div class="container container--narrow">
         <nav class="breadcrumbs page__breadcrumbs" aria-label="Хлебные крошки">
           <a class="breadcrumbs__link" href="/">Главная</a>
           <span class="breadcrumbs__separator" aria-hidden="true">-</span>
@@ -173,13 +173,52 @@
                 <div class="delivery-calc__field">
                   <label class="delivery-calc__label" for="delivery-place">Место доставки</label>
 
-                  <div class="delivery-calc__select-wrap">
-                    <select class="delivery-calc__select" id="delivery-place" name="delivery-place">
-                      <option value="">Населённый пункт</option>
-                      <option value="abakan">Абакан</option>
-                      <option value="chernogorsk">Черногорск</option>
-                      <option value="minusinsk">Минусинск</option>
-                    </select>
+                  <div class="delivery-calc__select-wrap" data-delivery-select>
+                    <button
+                      class="delivery-calc__select"
+                      id="delivery-place"
+                      type="button"
+                      data-delivery-select-trigger
+                      aria-expanded="false"
+                      aria-controls="delivery-place-panel"
+                    >
+                      <span class="delivery-calc__select-value" data-delivery-select-value>Населённый пункт</span>
+                    </button>
+
+                    <input type="hidden" name="delivery-place" value="" data-delivery-select-input />
+
+                    <div class="delivery-calc__select-panel" id="delivery-place-panel" hidden data-delivery-select-panel>
+                      <div class="delivery-calc__search-field">
+                        <input
+                          class="delivery-calc__select-search"
+                          type="search"
+                          placeholder="Поиск города"
+                          autocomplete="off"
+                          data-delivery-select-search
+                        />
+                        <button class="delivery-calc__search-button" type="button" aria-label="Поиск">
+                          <img class="delivery-calc__search-icon" src="/images/search-icon.svg" alt="" aria-hidden="true" />
+                        </button>
+                      </div>
+
+                      <div class="delivery-calc__select-options" role="listbox" aria-label="Города Республики Хакасия">
+                        <button type="button" class="delivery-calc__select-option" data-delivery-select-option data-value="abakan">
+                          Абакан
+                        </button>
+                        <button type="button" class="delivery-calc__select-option" data-delivery-select-option data-value="abaza">
+                          Абаза
+                        </button>
+                        <button type="button" class="delivery-calc__select-option" data-delivery-select-option data-value="chernogorsk">
+                          Черногорск
+                        </button>
+                        <button type="button" class="delivery-calc__select-option" data-delivery-select-option data-value="sayanogorsk">
+                          Саяногорск
+                        </button>
+                        <button type="button" class="delivery-calc__select-option" data-delivery-select-option data-value="sorsk">
+                          Сорск
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -200,7 +239,7 @@
                   <div class="delivery-calc__price" data-delivery-price>2100 ₽</div>
                 </div>
 
-                <div class="delivery-calc__note">+100 ₽/км доставка после 18:00</div>
+                <div class="delivery-calc__note"><span class="delivery-calc__note-emphasis">+100 ₽/км </span> доставка после 18:00</div>
               </div>
             </section>
 

@@ -1,12 +1,14 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.catalog {
-  padding-top: 12px;
+
+.page__main {
+  padding-bottom: 45px;
 }
 
 .catalog__categories {
-  padding-bottom: 16px;
+  padding-bottom: 0;
+  padding-top: 25px;
 }
 
 .catalog__categories-grid {
@@ -18,6 +20,11 @@
 .catalog__seo {
   padding-top: 12px;
   color: $color-muted;
+}
+
+.section--compact {
+  padding-top: 40px;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1279px) {

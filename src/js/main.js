@@ -1,6 +1,6 @@
 import '../scss/main.scss';
 
-import { initMenu } from './modules/menu.js';
+import { initMenu, initCatalogCategorySort } from './modules/menu.js';
 import { initModal } from './modules/modal.js';
 import { initTabs } from './modules/tabs.js';
 import { initAccordion } from './modules/accordion.js';
@@ -8,6 +8,8 @@ import { initSliders } from './modules/sliders.js';
 import { initForms } from './modules/forms.js';
 import { initQuantitySteppers } from './modules/quantity-stepper.js';
 import { initProductGallery } from './modules/product-gallery.js';
+import { initProductPrices } from './modules/product-prices.js';
+import { initProductCardTitles, initProductCardNavigation } from './modules/product-card.js';
 import { initDeliveryCalculation } from './modules/delivery-calculation.js';
 import { initCustomersPage } from './modules/customers-page.js';
 import { initFavorites } from './modules/favorite.js';
@@ -42,6 +44,7 @@ async function bootstrap() {
   await loadPartials();
 
   initMenu();
+  initCatalogCategorySort();
   initModal();
   initTabs();
   initAccordion();
@@ -49,6 +52,9 @@ async function bootstrap() {
   initForms();
   initQuantitySteppers();
   initProductGallery();
+  initProductPrices();
+  initProductCardTitles();
+  initProductCardNavigation();
   initDeliveryCalculation();
   initCustomersPage();
   initFavorites();

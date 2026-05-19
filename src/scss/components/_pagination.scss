@@ -1,6 +1,10 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
+.catalog-category__pagination {
+  margin-top: 20px;
+}
+
 .pagination {
   display: flex;
   flex-wrap: wrap;
@@ -11,23 +15,42 @@
 .pagination__item,
 .pagination__button {
   @include flex-center;
-  min-width: 40px;
-  height: 40px;
-  padding: 0 12px;
-  border-radius: 10px;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 5px;
   background: $color-white;
-  border: 1px solid $color-border;
-  color: $color-brand;
+  border: none;
+  color: #000;
   transition: 0.2s ease;
+  font-weight: 400;
+}
+
+.pagination__button {
+  gap: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.pagination__button-icon {
+  display: block;
+  width: 6px;
+  height: auto;
+}
+
+.pagination__button-icon--prev {
+  transform: rotate(180deg);
 }
 
 .pagination__item--active {
-  background: $color-brand;
-  color: $color-white;
+  background: transparent;
+  border-color: #000;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 500;
 }
 
 .pagination__item--dots {
-  border-color: transparent;
   background: transparent;
 }
 
@@ -39,7 +62,6 @@
 
 .pagination__item:hover,
 .pagination__button:hover:not(:disabled) {
-  border-color: $color-primary;
   color: $color-primary;
   transform: translateY(-1px);
 }

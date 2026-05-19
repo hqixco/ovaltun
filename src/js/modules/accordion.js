@@ -1,5 +1,12 @@
 export function initAccordion() {
   document.querySelectorAll('[data-accordion]').forEach((root) => {
+    root.querySelectorAll('[data-accordion-item]').forEach((item) => {
+      const trigger = item.querySelector('[data-accordion-trigger]');
+      if (trigger instanceof HTMLButtonElement) {
+        trigger.setAttribute('aria-expanded', String(item.classList.contains('is-open')));
+      }
+    });
+
     root.addEventListener('click', (event) => {
       const target = event.target;
       if (!(target instanceof HTMLElement)) return;
@@ -11,7 +18,9 @@ export function initAccordion() {
       if (!item) return;
 
       item.classList.toggle('is-open');
+      if (trigger instanceof HTMLButtonElement) {
+        trigger.setAttribute('aria-expanded', String(item.classList.contains('is-open')));
+      }
     });
   });
 }
-
