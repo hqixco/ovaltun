@@ -10,6 +10,11 @@ import { initQuantitySteppers } from './modules/quantity-stepper.js';
 import { initProductGallery } from './modules/product-gallery.js';
 import { initProductPrices } from './modules/product-prices.js';
 import { initProductCardTitles, initProductCardNavigation } from './modules/product-card.js';
+import {
+  initNewsCardTitles,
+  initNewsCardNavigation,
+  initPromotionsCardTitles,
+} from './modules/news-card.js';
 import { initDeliveryCalculation } from './modules/delivery-calculation.js';
 import { initCustomersPage } from './modules/customers-page.js';
 import { initFavorites } from './modules/favorite.js';
@@ -55,6 +60,9 @@ async function bootstrap() {
   initProductPrices();
   initProductCardTitles();
   initProductCardNavigation();
+  initNewsCardTitles();
+  initNewsCardNavigation();
+  initPromotionsCardTitles();
   initDeliveryCalculation();
   initCustomersPage();
   initFavorites();

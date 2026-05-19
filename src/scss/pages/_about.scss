@@ -11,12 +11,12 @@
 }
 
 .about-page__title {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .about-page__intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 560px;
+  grid-template-columns: minmax(0, 1fr) 820px;
   gap: 48px;
   align-items: start;
   margin-bottom: 80px;
@@ -24,7 +24,7 @@
 
 .about-page__intro-content {
   color: $color-text;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -34,44 +34,47 @@
 
 .about-page__stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 260px);
   gap: 16px;
   margin-top: 28px;
 }
 
 .about-stat {
-  padding: 18px;
+  padding: 23px 18px;
+  height: 134px;
   border-radius: 8px;
   background: $color-card-bg;
 }
 
 .about-stat__value {
   color: $color-text;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 400;
   line-height: 1.15;
 }
 
 .about-stat__text {
-  margin-top: 6px;
-  color: $color-muted;
-  font-size: 14px;
+  margin-top: 11px;
+  color: #000;
+  font-size: 16px;
   line-height: 1.35;
 }
 
 .about-page__image {
-  min-height: 460px;
+  position: relative;
+  min-height: 338px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.about-page__image-placeholder {
+.about-page__image-pic {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
   height: 100%;
-  min-height: 460px;
-  border-radius: 16px;
-  background:
-    radial-gradient(circle at 18% 18%, rgba($color-white, 0.8), transparent 20%),
-    radial-gradient(circle at 70% 30%, rgba($color-primary, 0.08), transparent 24%),
-    radial-gradient(circle at 55% 75%, rgba($color-brand, 0.08), transparent 28%),
-    linear-gradient(135deg, #f7f9fd 0%, #e9eef7 55%, #dbe4f1 100%);
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .about-page__partners {
@@ -83,26 +86,27 @@
 
 .about-page__partners-inner {
   display: grid;
-  gap: 16px;
+  gap: 13px;
 }
 
 .about-page__section-title {
   margin: 0;
   color: $color-text;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 400;
   line-height: 1.25;
 }
 
 .about-page__section-title--center {
   text-align: center;
+  font-size: 32px;
+  font-weight: 400;
 }
 
 .about-page__partners-text {
-  max-width: 920px;
   margin: 0 auto;
-  color: $color-muted;
-  font-size: 15px;
+  color:#000;
+  font-size: 18px;
   line-height: 1.45;
   text-align: center;
 }
@@ -111,60 +115,103 @@
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 7px;
+  padding: 0 20px; 
 }
 
 .about-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
-  padding: 12px;
+  min-height: 154px;
+  width: 260px;
   border-radius: 10px;
   background: $color-white;
-  color: $color-brand;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
+}
+
+.about-logo__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-page__history {
   margin-bottom: 80px;
 }
 
-.about-page__history-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+.about-page__history-slider {
   margin-top: 28px;
 }
 
+.about-page__history-viewport {
+  overflow: hidden;
+}
+
+.about-page__history-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+  padding-bottom: 6px;
+}
+
+.about-page__history-grid::-webkit-scrollbar {
+  display: none;
+}
+
 .history-card {
-  padding: 24px;
+  flex: 0 0 auto;
+  width: 820px;
+  height: auto;
+  padding: 40px 40px;
   border-radius: 8px;
   background: $color-card-bg;
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
 }
 
 .history-card__year {
-  color: $color-brand;
-  font-size: 34px;
+  color: #000;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1;
 }
 
+.history-card__content {
+  min-width: 0;
+}
+
 .history-card__title {
-  margin: 14px 0 10px;
+  margin: 0 0 18px;
   color: $color-text;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   line-height: 1.35;
 }
 
 .history-card__text {
   margin: 0;
   color: $color-text;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.history-card__text + .history-card__text {
+  margin-top: 10px;
 }
 
 .about-page__range {
@@ -173,8 +220,8 @@
 
 .about-page__range-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 560px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) 960px;
+  gap: 30px;
   align-items: start;
 }
 
@@ -182,11 +229,18 @@
   color: $color-text;
 }
 
+.about-page__range-text {
+  margin: 12px 0;
+  color: $color-text;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
 .about-page__range-list {
   margin: 0 0 24px;
-  padding-left: 18px;
+  padding-left: 0;
   color: $color-text;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -195,74 +249,91 @@
 }
 
 .about-page__range-button {
-  width: 180px;
+  width: 202px;
   height: 44px;
   border: 0;
   border-radius: 8px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .about-page__range-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 400px 260px 260px;
   gap: 16px;
+  align-items: stretch;
 }
 
-.about-page__range-item {
-  min-height: 180px;
+.about-page__range-gallery-column {
+  display: grid;
+  gap: 16px;
+  height: 393px;
+}
+
+.about-page__range-gallery-column--stack {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.about-page__range-image {
+  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba($color-white, 0.8), transparent 22%),
-    linear-gradient(135deg, #f7f9fd 0%, #e5ecf7 100%);
-}
-
-.about-page__range-item--large {
-  grid-column: 1 / -1;
-  min-height: 240px;
+  object-fit: cover;
 }
 
 .about-page__cards {
-  margin-bottom: 72px;
+  margin-bottom: 62px;
 }
 
 .about-page__cards-layout {
   display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns: 820px minmax(0, 1fr);
+  gap: 20px;
   align-items: start;
 }
 
 .about-page__cards-image {
-  min-height: 360px;
-  border-radius: 16px;
-  background:
-    radial-gradient(circle at 25% 20%, rgba($color-white, 0.8), transparent 22%),
-    radial-gradient(circle at 65% 35%, rgba($color-primary, 0.08), transparent 26%),
-    linear-gradient(135deg, #f7f9fd 0%, #e3ebf5 100%);
+  position: relative;
+  min-height: 486px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-page__cards-image-pic {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .about-page__cards-content {
   display: grid;
-  gap: 16px;
+  gap: 10px;
 }
 
 .about-text-card {
-  padding: 24px;
-  border-radius: 8px;
+  padding: 43px 40px;
+  height: 238px;
+  border-radius: 10px;
   background: $color-card-bg;
 }
 
 .about-text-card__title {
   margin: 0 0 10px;
   color: $color-text;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 400;
   line-height: 1.35;
 }
 
 .about-text-card__text {
   margin: 0;
   color: $color-text;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -293,7 +364,15 @@
   }
 
   .about-page__history-grid {
-    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .history-card {
+    width: min(820px, calc(100vw - 32px));
+    height: 334px;
+    padding: 24px 28px;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
   }
 }
 
@@ -311,13 +390,19 @@
   }
 
   .about-page__stats,
-  .about-page__partners-logos,
-  .about-page__history-grid {
+  .about-page__partners-logos {
     grid-template-columns: 1fr;
   }
 
+  .about-logo {
+    min-height: 88px;
+  }
+
+  .about-logo__image {
+    height: 48px;
+  }
+
   .about-page__image,
-  .about-page__image-placeholder,
   .about-page__range-gallery,
   .about-page__cards-image {
     min-height: 260px;
@@ -325,6 +410,18 @@
 
   .about-page__range-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .about-page__range-gallery-column {
+    height: auto;
+  }
+
+  .about-page__range-gallery-column--stack {
+    grid-template-rows: repeat(2, minmax(0, 180px));
+  }
+
+  .about-page__range-gallery-column:not(.about-page__range-gallery-column--stack) .about-page__range-image {
+    min-height: 260px;
   }
 
   .about-page__cards-layout {

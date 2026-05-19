@@ -6,7 +6,7 @@
 }
 
 .certificates-page {
-  padding-bottom: 72px;
+  padding-bottom: 22px;
 }
 
 .certificates-page .breadcrumbs {
@@ -37,13 +37,16 @@
 
 .certificates-page__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 400px);
   gap: 32px 28px;
+  justify-content: center;
   margin-bottom: 72px;
 }
 
 .certificate-card {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
@@ -60,76 +63,26 @@
 }
 
 .certificate-card__image {
-  position: relative;
+  display: block;
   width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: auto;
+  margin: auto 0;
+  pointer-events: none;
 }
 
 .certificate-card--vertical {
-  aspect-ratio: 1 / 1.22;
+  width: 400px;
+  height: 450px;
 }
 
 .certificate-card--horizontal {
-  aspect-ratio: 1.52 / 1;
-}
-
-.certificate-card--vertical .certificate-card__image {
-  background-color: #f8f5ea;
-  background-image:
-    linear-gradient(90deg, rgba(150, 132, 88, 0.35) 0 10px, transparent 10px calc(100% - 10px), rgba(150, 132, 88, 0.35) calc(100% - 10px)),
-    radial-gradient(circle at center 18%, rgba(190, 170, 90, 0.25), transparent 24%),
-    linear-gradient(180deg, transparent 0 28%, rgba(255, 255, 255, 0.85) 28% 72%, transparent 72%);
-}
-
-.certificate-card--vertical .certificate-card__image::before {
-  content: 'СЕРТИФИКАТ';
-  position: absolute;
-  left: 50%;
-  top: 28%;
-  transform: translateX(-50%);
-  color: #4f4f4f;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
-
-.certificate-card--horizontal .certificate-card__image {
-  background-color: #f7f8fb;
-  background-image:
-    linear-gradient(0deg, rgba(88, 108, 132, 0.35) 0 12px, transparent 12px calc(100% - 12px), rgba(88, 108, 132, 0.35) calc(100% - 12px)),
-    linear-gradient(90deg, rgba(88, 108, 132, 0.35) 0 12px, transparent 12px calc(100% - 12px), rgba(88, 108, 132, 0.35) calc(100% - 12px));
-}
-
-.certificate-card--horizontal .certificate-card__image::before {
-  content: 'СЕРТИФИКАТ';
-  position: absolute;
-  left: 50%;
-  top: 34%;
-  transform: translateX(-50%);
-  color: #626b76;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.12em;
-  white-space: nowrap;
+  width: 400px;
+  height: 450px;
 }
 
 @media (max-width: 1279px) {
   .certificates-page__grid {
     gap: 24px;
-  }
-
-  .certificate-card--vertical .certificate-card__image::before {
-    font-size: 20px;
-  }
-
-  .certificate-card--horizontal .certificate-card__image::before {
-    font-size: 18px;
   }
 }
 
@@ -139,7 +92,7 @@
   }
 
   .certificates-page__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 400px);
   }
 }
 
@@ -154,22 +107,14 @@
   }
 
   .certificates-page__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 400px);
     gap: 18px 14px;
     margin-bottom: 48px;
-  }
-
-  .certificate-card--vertical .certificate-card__image::before {
-    font-size: 14px;
-  }
-
-  .certificate-card--horizontal .certificate-card__image::before {
-    font-size: 13px;
   }
 }
 
 @media (max-width: 479px) {
   .certificates-page__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 400px;
   }
 }

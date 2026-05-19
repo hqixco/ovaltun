@@ -26,6 +26,7 @@
               <div class="slider__track home-hero__track" data-slider-track>
                 <article class="slider__slide home-hero__slide" data-slider-slide>
                   <div class="home-hero__banner">
+                    <img class="home-hero__banner-image" src="/images/home-hero-banner.jpg" alt="" aria-hidden="true" />
                     <div class="home-hero__inner">
                       <div class="home-hero__content">
                         <h1 class="home-hero__title">Дом с комфортом: скидка в «ОВАЛТУН»</h1>
@@ -34,15 +35,14 @@
                           <a class="button button--primary" href="/src/pages/catalog.html">Условия</a>
                         </div>
                       </div>
-                      <div class="home-hero__visual">
-                        <div class="home-hero__image">Hero image</div>
-                      </div>
+                      <div class="home-hero__visual"></div>
                     </div>
                   </div>
                 </article>
 
                 <article class="slider__slide home-hero__slide" data-slider-slide>
                   <div class="home-hero__banner home-hero__banner--alt">
+                    <img class="home-hero__banner-image" src="/images/home-hero-banner.jpg" alt="" aria-hidden="true" />
                     <div class="home-hero__inner">
                       <div class="home-hero__content">
                         <h2 class="home-hero__title">Стройматериалы и интерьерные решения для дома</h2>
@@ -52,9 +52,7 @@
                           <a class="button button--ghost" href="/src/pages/about.html">О компании</a>
                         </div>
                       </div>
-                      <div class="home-hero__visual">
-                        <div class="home-hero__image">Promo image</div>
-                      </div>
+                      <div class="home-hero__visual"></div>
                     </div>
                   </div>
                 </article>
@@ -288,22 +286,43 @@
 
           <div class="home-reviews__grid">
             <article class="home-review-card">
-              <div class="home-review-card__media">
+              <button
+                class="home-review-card__media"
+                type="button"
+                aria-label="Смотреть видео-отзыв"
+                data-modal-open="#site-modal"
+                data-modal-video-src="/videos/review-video.mp4"
+                data-modal-video-poster="/images/review-video-preview.jpg"
+              >
                 <img class="home-review-card__image" src="/images/review-video-preview.jpg" alt="" aria-hidden="true" />
-                <button class="home-review-card__play" type="button" aria-label="Смотреть видео-отзыв"></button>
-              </div>
+                <span class="home-review-card__play" aria-hidden="true"></span>
+              </button>
             </article>
             <article class="home-review-card">
-              <div class="home-review-card__media">
+              <button
+                class="home-review-card__media"
+                type="button"
+                aria-label="Смотреть видео-отзыв"
+                data-modal-open="#site-modal"
+                data-modal-video-src="/videos/review-video.mp4"
+                data-modal-video-poster="/images/review-video-preview.jpg"
+              >
                 <img class="home-review-card__image" src="/images/review-video-preview.jpg" alt="" aria-hidden="true" />
-                <button class="home-review-card__play" type="button" aria-label="Смотреть видео-отзыв"></button>
-              </div>
+                <span class="home-review-card__play" aria-hidden="true"></span>
+              </button>
             </article>
             <article class="home-review-card">
-              <div class="home-review-card__media">
+              <button
+                class="home-review-card__media"
+                type="button"
+                aria-label="Смотреть видео-отзыв"
+                data-modal-open="#site-modal"
+                data-modal-video-src="/videos/review-video.mp4"
+                data-modal-video-poster="/images/review-video-preview.jpg"
+              >
                 <img class="home-review-card__image" src="/images/review-video-preview.jpg" alt="" aria-hidden="true" />
-                <button class="home-review-card__play" type="button" aria-label="Смотреть видео-отзыв"></button>
-              </div>
+                <span class="home-review-card__play" aria-hidden="true"></span>
+              </button>
             </article>
           </div>
         </div>

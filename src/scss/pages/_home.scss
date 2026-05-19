@@ -15,19 +15,29 @@
 }
 
 .home-hero__banner {
+  position: relative;
   min-height: 540px;
   border-radius: 10px;
-  background: url('/images/home-hero-banner.jpg') center/cover no-repeat;
   color: $color-white;
   overflow: hidden;
   box-shadow: 0 16px 40px rgba($color-brand-dark, 0.18);
 }
 
 .home-hero__banner--alt {
-  background: url('/images/home-hero-banner.jpg') center/cover no-repeat;
+}
+
+.home-hero__banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .home-hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   align-items: center;
@@ -70,10 +80,6 @@
   justify-content: flex-end;
   align-items: center;
   min-height: 100%;
-}
-
-.home-hero__image {
-  display: none;
 }
 
 .home-hero__slide {
@@ -245,18 +251,18 @@
 
 .home-benefit-card {
   padding: 20px;
-  border: 1px solid $color-border;
-  border-radius: 16px;
+  border: none;
+  border-radius: 10px;
   background: $color-white;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .home-benefit-card__icon {
   @include flex-center;
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
   margin-bottom: 16px;
-  border-radius: 12px;
+  border-radius: 360px;
   background: $color-card-bg;
   color: $color-brand;
   font-weight: 500;
@@ -264,8 +270,8 @@
 
 .home-benefit-card__icon-image {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -431,12 +437,19 @@
 
 .home-review-card__media {
   position: relative;
+  display: block;
   min-height: 264px;
+  width: 100%;
+  padding: 0;
+  border: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba($color-white, 0.08);
   background: $color-brand;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  appearance: none;
+  text-align: left;
 }
 
 .home-review-card__media:hover {
@@ -510,6 +523,12 @@
 .home-tour__actions {
   display: inline-block;
   margin-top: 60px;
+}
+
+.home-tour__actions  .button {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 60px;
 }
 
 .home-tour__image {

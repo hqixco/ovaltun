@@ -6,7 +6,7 @@
 }
 
 .faq-page {
-  padding-bottom: 72px;
+  padding-bottom: 2px;
 }
 
 .faq-page .breadcrumbs {
@@ -28,16 +28,16 @@
 
 .faq-page__grid {
   display: grid;
-  grid-template-columns: 520px minmax(0, 1fr);
+  grid-template-columns: 520px 1100px;
   gap: 88px;
   align-items: start;
   margin-bottom: 78px;
 }
 
 .faq-page__title {
-  margin: 0 0 44px;
+  margin: 0 0 50px;
   color: $color-text;
-  font-size: 52px;
+  font-size: 54px;
   font-weight: 500;
   line-height: 1.08;
 }
@@ -52,8 +52,8 @@
 .faq-page__text strong {
   display: block;
   margin-bottom: 14px;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .faq-page__text p {
@@ -62,15 +62,15 @@
 
 .faq-form {
   width: 100%;
-  padding: 40px 42px 34px;
+  padding: 40px 40px 34px;
   border-radius: 8px;
   background: $color-card-bg;
 }
 
 .faq-form__row {
   display: grid;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .faq-form__row--two {
@@ -83,9 +83,9 @@
   border: 1px solid $color-border;
   border-radius: 4px;
   background: $color-white;
-  color: $color-text;
+  color: #BFC4CD;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 18px;
   outline: none;
 }
 
@@ -100,6 +100,7 @@
   margin-bottom: 22px;
   padding: 14px 18px;
   resize: vertical;
+  margin-top: 10px;
 }
 
 .faq-form__input::placeholder,
@@ -113,9 +114,9 @@
 }
 
 .faq-form__button {
-  width: 430px;
-  height: 48px;
-  margin-bottom: 14px;
+  width: 500px;
+  height: 44px;
+  margin-bottom: 10px;
   border: 0;
   border-radius: 4px;
   background: $color-primary;
