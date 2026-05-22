@@ -145,7 +145,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .search-page {
     padding-bottom: 48px;
   }

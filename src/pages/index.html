@@ -15,10 +15,10 @@
           <div class="slider home-hero__slider" data-slider>
             <div class="home-hero__controls slider__controls">
               <button class="slider__button" type="button" data-slider-prev aria-label="Предыдущий слайд">
-                <img class="slider__button-icon" src="/images/slider-arrow.svg" alt="" aria-hidden="true" />
+                <img class="slider__button-icon" src="/images/slider-button-arrow.svg" alt="" aria-hidden="true" />
               </button>
               <button class="slider__button" type="button" data-slider-next aria-label="Следующий слайд">
-                <img class="slider__button-icon slider__button-icon--next" src="/images/slider-arrow.svg" alt="" aria-hidden="true" />
+                <img class="slider__button-icon" src="/images/slider-button-arrow.svg" alt="" aria-hidden="true" />
               </button>
             </div>
 
@@ -35,7 +35,6 @@
                           <a class="button button--primary" href="/src/pages/catalog.html">Условия</a>
                         </div>
                       </div>
-                      <div class="home-hero__visual"></div>
                     </div>
                   </div>
                 </article>
@@ -52,7 +51,6 @@
                           <a class="button button--ghost" href="/src/pages/about.html">О компании</a>
                         </div>
                       </div>
-                      <div class="home-hero__visual"></div>
                     </div>
                   </div>
                 </article>
@@ -66,7 +64,8 @@
       <section class="section home-categories">
         <div class="container container--narrow">
 
-          <div class="home-categories__grid">
+          <div class="home-categories__viewport">
+            <div class="home-categories__grid" data-drag-scroll>
             <a class="home-category-card home-category-card--large home-category-card--with-image" href="/src/pages/catalog-category.html">
               <h3 class="home-category-card__title">Керамогранит</h3>
               <img class="home-category-card__image" src="/images/home-category-keramogranit.png" alt="Керамогранит" />
@@ -103,6 +102,10 @@
               <h3 class="home-category-card__title">Бетон</h3>
               <img class="home-category-card__image" src="/images/category-bottom.png" alt="Бетон" />
             </a>
+            </div>
+          </div>
+          <div class="home-categories__action">
+            <a class="home-categories__button" href="/src/pages/catalog.html">В каталог</a>
           </div>
         </div>
       </section>
@@ -239,7 +242,7 @@
           <div class="home-section-head">
             <div>
               <h2 class="section__title">Галерея готовых решений</h2>
-              <p class="section__subtitle">Идеи для вашего интерьера от наших дизайнеров</p>
+              <p class="section__subtitle">�деи для вашего интерьера от наших дизайнеров</p>
             </div>
             <a class="home-section-head__link button button--primary home-section-head__link--plain" href="/src/pages/catalog.html">
               <span>Посмотреть проекты</span>
@@ -333,7 +336,7 @@
           <div class="home-tour__grid">
             <div class="home-tour__content">
               <h2 class="section__title">Посмотрите наш магазин в интерактивном 3D-туре</h2>
-              <p class="section__subtitle">Идеи для вашего интерьера от наших дизайнеров</p>
+              <p class="section__subtitle">�деи для вашего интерьера от наших дизайнеров</p>
               <div class="home-tour__actions">
                 <a class="button button--primary" href="/src/pages/catalog.html">Смотреть тур</a>
               </div>
@@ -350,3 +353,4 @@
     <div data-include="/partials/modal.html"></div>
   </body>
 </html>
+

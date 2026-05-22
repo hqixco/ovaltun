@@ -38,7 +38,7 @@
   box-shadow: 0 14px 30px rgba($color-brand-dark, 0.08);
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .category-card__title {
     max-width: 80%;
     font-size: 24px;

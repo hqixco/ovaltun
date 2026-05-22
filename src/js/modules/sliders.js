@@ -17,6 +17,56 @@ export function initSliders() {
 
     if (!items.length) return;
 
+    if (slider.classList.contains('home-hero__slider')) {
+      const heroInners = Array.from(slider.querySelectorAll('.home-hero__inner')).filter(
+        (inner) => inner instanceof HTMLElement,
+      );
+      const heroBanner = slider.querySelector('.home-hero__banner');
+      let heroUpdateRaf = 0;
+      let heroResizeObserver;
+
+      const updateHomeHeroHeight = () => {
+        heroUpdateRaf = 0;
+
+        const isCompactHomeHero = window.matchMedia('(max-width: 1199px)').matches;
+
+        if (!isCompactHomeHero || !heroInners.length) {
+          slider.style.removeProperty('--home-hero-banner-height');
+          return;
+        }
+
+        const bannerHeight = Math.max(...heroInners.map((inner) => inner.scrollHeight));
+
+        if (bannerHeight > 0) {
+          slider.style.setProperty('--home-hero-banner-height', `${bannerHeight}px`);
+        }
+      };
+
+      const scheduleHomeHeroHeightUpdate = () => {
+        if (heroUpdateRaf) return;
+
+        heroUpdateRaf = window.requestAnimationFrame(updateHomeHeroHeight);
+      };
+
+      scheduleHomeHeroHeightUpdate();
+
+      if ('ResizeObserver' in window) {
+        heroResizeObserver = new ResizeObserver(scheduleHomeHeroHeightUpdate);
+        heroInners.forEach((inner) => heroResizeObserver.observe(inner));
+      }
+
+      window.addEventListener('resize', scheduleHomeHeroHeightUpdate);
+
+      if (heroBanner instanceof HTMLElement) {
+        const heroImages = Array.from(heroBanner.querySelectorAll('img'));
+        heroImages.forEach((image) => {
+          if (image.complete) return;
+          image.addEventListener('load', scheduleHomeHeroHeightUpdate, { once: true });
+          image.addEventListener('error', scheduleHomeHeroHeightUpdate, { once: true });
+        });
+      }
+    }
+
     let activeIndex = 0;
     let scrollRaf = 0;
     let resizeObserver;
@@ -180,6 +230,7 @@ export function initSliders() {
 
       if (mode === 'pointer' && event.button !== 0) return;
       if (mode === 'mouse' && event.button !== 0) return;
+      if (mode === 'pointer' && event.pointerType === 'touch') return;
 
       event.preventDefault();
 

@@ -62,7 +62,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .not-found-page {
     padding: 70px 0 80px;
   }

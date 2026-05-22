@@ -39,8 +39,68 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
+  .catalog h1 {
+    font-size: 35px;
+  }
+
+  .catalog .section--compact {
+    padding-top: 20px;
+  }
+
+  .catalog-category__sidebar-title {
+    font-size: 18px;
+  }
+
+  .filter__title,
+  .filter__group-title {
+    font-size: 16px;
+  }
+
+  .filter__checkbox {
+    font-size: 14px;
+  }
+
+  .filter__close {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .filter__group-icon-image {
+    width: 10px;
+  }
+}
+
+@include mq-down($breakpoint-mobile) {
+  .catalog h1 {
+    font-size: 24px;
+  }
+
+  .catalog .section--compact {
+    padding-top: 20px;
+  }
+
+  .catalog__categories {
+    padding-top: 15px;
+  }
+
+  .category-card__title {
+    font-size: 14px;
+  }
+
+  .category-card {
+    padding: 16px;
+  }
+
   .catalog__categories-grid {
-    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .category-card {
+    min-height: 100px;
+  }
+
+  .page__main.catalog {
+    padding-bottom: 20px;
   }
 }

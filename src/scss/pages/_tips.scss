@@ -110,10 +110,34 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .tips-page__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+  }
+
+  .tips-card__title {
+    font-size: 15px;
+  }
+
+  .tips-card__text {
+    font-size: 13px;
+  }
+
+  .tips-page__title,
+  .tips-page__breadcrumbs {
+    margin-bottom: 20px;
+  }
+
+  .tips-page__pagination {
+    margin-bottom: 35px;
+  }
+
+}
+
+@media (max-width: 440px) {
+  .tips-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .tips-card__title {

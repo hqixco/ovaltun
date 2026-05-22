@@ -3,7 +3,7 @@
 
 
 .footer__surface {
-  width: 1700px;
+  width: min(1700px, calc(100% - 20px));
   margin: 0 auto;
   background: #F2F6FF;
   padding: 10px 0 0;
@@ -20,8 +20,8 @@
   gap: 24px;
   align-items: start;
   padding: 38px 32px;
-  border-radius: 24px;
-  background: rgba($color-white, 0.72);
+  border-radius: 10px;
+  background: #fff;
   border: none;
 }
 
@@ -52,7 +52,7 @@
   min-height: 48px;
   padding: 0 16px;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
   background: #EAEBEE;
   color: $color-text;
 }
@@ -188,8 +188,7 @@
   gap: 20px;
   align-items: center;
   margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid $color-border;
+  padding-top: 70px;
   color: $color-muted;
   font-size: 14px;
 }
@@ -246,7 +245,7 @@
   }
 }
 
-@include mq-down($breakpoint-mobile) {
+@include mq-down($breakpoint-tablet) {
   .footer__newsletter {
     padding-top: 24px;
   }
@@ -272,4 +271,94 @@
     flex-direction: column;
     gap: 8px;
   }
+
+  .footer__newsletter-title  {
+    font-size: 25px;
+  }
+
+  .footer__newsletter-box {
+    padding: 25px;
+  }
+
+  .footer__newsletter {
+    padding-top: 20px;
+  }
 }
+
+
+@include mq-down($breakpoint-tablet) {
+  .footer__newsletter-text {
+    font-size: 14px;
+  }
+
+  .footer__newsletter-box {
+    gap: 10px;
+  }
+
+  .footer__newsletter-input {
+    font-size: 14px;
+    min-height: 40px;
+  }
+
+  .footer__newsletter-button {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .footer__main {
+    padding-top: 15px;
+  }
+
+  .footer__title {
+    font-size: 18px;
+  }
+
+  .footer__link, .footer__text, .footer__contact-link {
+    font-size: 14px;
+  }
+
+  .footer__column--catalog .footer__list {
+    column-gap: 12px;
+  }
+
+  .footer__list {
+    gap: 8px;
+  }
+
+  .footer__logo {
+    margin-bottom: 12px;
+  }
+
+  .footer__brand-text {
+    margin-bottom: 15px;
+  }
+
+  .footer__logo-image {
+    width: 170px;
+  }
+
+  .footer__contacts {
+    margin-bottom: 8px;
+  }
+
+  .footer__socials {
+    gap: 10px;
+  }
+
+  .footer__social {
+    width: 30px;
+    min-width: 30px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .footer__social-icon {
+    width: 100%;
+    height: auto
+  }
+
+  .footer__bottom {
+    padding-top: 0;
+  }
+}
+

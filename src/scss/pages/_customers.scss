@@ -1,7 +1,8 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.page--customers {
+
+.page__main.page--customers {
   padding-bottom: 80px;
 }
 
@@ -121,6 +122,7 @@
 
 .delivery-calc__select-wrap {
   position: relative;
+  border-radius: 5px;
 }
 
 .delivery-calc__select {
@@ -256,6 +258,7 @@
   min-height: 64px;
   padding: 0 18px;
   border: none;
+  border-radius: 5px;
   background: #EAEBEE;
   color: $color-text;
   font-size: 18px;
@@ -279,7 +282,7 @@
 
 .delivery-calc__result {
   padding: 20px 20px 26px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   background: $color-card-bg;
   margin-bottom: 15px;
 }
@@ -304,7 +307,7 @@
   align-items: center;
   justify-content: center;
   min-height: 41px;
-  border-radius: 0 0 6px 6px;
+  border-radius: 5px;
   background: $color-light-bg;
   color: $color-text;
   font-size: 16px;
@@ -320,10 +323,16 @@
   height: 61px;
   font-size: 16px;
   padding-inline: 24px;
+  border-radius: 5px;
 }
 
 .side-nav {
   gap: 10px;
+}
+
+.side-nav__link--active,
+.side-nav__link--active:hover {
+  background: $color-brand-dark;
 }
 
 @media (max-width: 1439px) {
@@ -343,7 +352,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .page__title {
     margin-bottom: 20px;
     font-size: 28px;
@@ -355,17 +364,22 @@
   }
 
   .customers-page__sidebar {
-    overflow-x: auto;
-    padding-bottom: 4px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .side-nav {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
   .side-nav__link {
-    white-space: nowrap;
+    min-height: 52px;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
   }
 
   .content-page {
@@ -381,9 +395,214 @@
   }
 
   .delivery-calc__vehicle-tabs {
-    overflow-x: auto;
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(180px, 1fr);
+    overflow-x: visible;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page__main.page--customers {
+    padding-bottom: 56px;
+  }
+
+  .page__breadcrumbs {
+    margin-bottom: 16px;
+  }
+
+  .customers-page__sidebar {
+    margin: 0 -20px;
+    padding: 0 20px 4px;
+  }
+
+  .side-nav {
+    gap: 8px;
+  }
+
+  .side-nav__link {
+    height: 52px;
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+
+  .delivery-calc {
+    max-width: 100%;
+  }
+
+  .delivery-calc__label {
+    font-size: 16px;
+  }
+
+  .delivery-calc__select,
+  .delivery-calc__select-search,
+  .delivery-calc__vehicle {
+    font-size: 16px;
+  }
+
+  .delivery-calc__select {
+    padding-left: 16px;
+    padding-right: 40px;
+  }
+
+  .delivery-calc__select-search {
+    padding-left: 14px;
+    padding-right: 44px;
+  }
+
+  .delivery-calc__result {
+    padding: 16px;
+  }
+
+  .delivery-calc__result-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .delivery-calc__price {
+    font-size: 32px;
+  }
+
+  .delivery-calc__note {
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .delivery-calc__vehicle:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 440px) {
+  .page__main.page--customers {
+    padding-bottom: 44px;
+  }
+
+  .page__title {
+    margin: 24px 0 24px;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .page__breadcrumbs {
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .customers-page {
+    gap: 14px;
+  }
+
+  .customers-page__sidebar {
+    margin: 0 -20px;
+  }
+
+  .side-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .customers-page__content {
+    max-width: none;
+  }
+
+  .content-page {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .content-page h2 {
+    margin-bottom: 14px;
+    font-size: 20px;
+  }
+
+  .content-page h2:not(:first-child) {
+    margin-top: 28px;
+  }
+
+  .content-page h3 {
+    margin: 18px 0 10px;
+    font-size: 15px;
+  }
+
+  .content-page p {
+    margin-bottom: 12px;
+  }
+
+  .content-page li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+  }
+
+  .delivery-calc__field {
+    margin-bottom: 16px;
+  }
+
+  .delivery-calc__label {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .delivery-calc__select,
+  .delivery-calc__select-search,
+  .delivery-calc__select-option,
+  .delivery-calc__vehicle {
+    font-size: 14px;
+  }
+
+  .delivery-calc__select {
+    min-height: 42px;
+  }
+
+  .delivery-calc__select-panel {
+    padding: 10px;
+  }
+
+  .delivery-calc__select-search {
+    height: 40px;
+  }
+
+  .delivery-calc__search-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .delivery-calc__select-options {
+    max-height: 200px;
+  }
+
+  .delivery-calc__vehicle-tabs {
+    margin-bottom: 20px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .delivery-calc__vehicle {
+    min-height: 52px;
+    padding: 0 14px;
+  }
+
+  .delivery-calc__vehicle:first-child,
+  .delivery-calc__vehicle:last-child {
+    border-radius: 5px;
+    grid-column: auto;
+  }
+
+  .delivery-calc__result {
+    padding: 14px;
+  }
+
+  .delivery-calc__result-title {
+    font-size: 18px;
+  }
+
+  .delivery-calc__price {
+    font-size: 28px;
+  }
+
+  .delivery-calc__note {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .delivery-calc__select-panel {
+    left: 0;
+    right: 0;
   }
 }

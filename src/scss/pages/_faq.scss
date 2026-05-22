@@ -175,7 +175,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .faq-page {
     padding-bottom: 48px;
   }

@@ -20,6 +20,7 @@ import { initCustomersPage } from './modules/customers-page.js';
 import { initFavorites } from './modules/favorite.js';
 import { initCatalogFilter } from './modules/catalog-filter.js';
 import { initSearchPage } from './modules/search-page.js';
+import { initDragScroll } from './modules/drag-scroll.js';
 
 async function fetchInclude(path) {
   const candidates = [path, path.replace('/partials/', '/src/partials/')];
@@ -69,6 +70,7 @@ async function bootstrap() {
   initFavorites();
   initCatalogFilter();
   initSearchPage();
+  initDragScroll();
 }
 
 if (document.readyState === 'loading') {

@@ -53,7 +53,7 @@
   }
 }
 
-@include mq-down($breakpoint-mobile) {
+@include mq-down($breakpoint-tablet) {
   .subscribe__box {
     padding: 24px 16px;
   }

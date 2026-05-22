@@ -199,7 +199,7 @@
   align-items: center;
   min-height: 40px;
   padding: 0 38px 0 18px;
-  border-bottom: 1px solid $color-border-dark;
+  border-bottom: 1px solid $color-border;
   color: $color-text;
   font-size: 15px;
   line-height: 1.25;
@@ -221,7 +221,7 @@
 .catalog-mega__category:hover,
 .catalog-mega__category:focus-visible,
 .catalog-mega__category--active {
-  background: $color-primary;
+  background: $color-brand;
   color: $color-white;
 }
 
@@ -441,7 +441,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: $color-brand;
   background: $color-white;
   text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -494,6 +493,18 @@
   display: none;
 }
 
+.site-header__burger {
+  color: #000;
+}
+
+@include mq-down($breakpoint-desktop) {
+  .search-form {
+    width: 210px;
+  }
+}
+
+
+
 @include mq-down($breakpoint-tablet) {
   .site-header__top-nav,
   .site-header__top-info {
@@ -544,7 +555,7 @@
   }
 }
 
-@include mq-down($breakpoint-mobile) {
+@include mq-down($breakpoint-tablet) {
   .site-header__top {
     display: none;
   }
@@ -606,9 +617,16 @@
 
   .site-header__mobile-panel {
     display: none;
-    border-top: 1px solid $color-border;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    z-index: 40;
+    width: min(240px, calc(100vw - 32px));
+    padding: 10px;
+    border: 1px solid $color-border;
+    border-radius: 14px;
     background: $color-white;
-    padding: 12px 0;
+    box-shadow: 0 16px 40px rgba($color-brand-dark, 0.14);
   }
 
   .site-header--menu-open .site-header__mobile-panel {
@@ -617,17 +635,55 @@
 
   .site-header__mobile-nav {
     display: grid;
-    gap: 10px;
+    gap: 6px;
   }
 
   .site-header__mobile-link {
-    color: $color-brand;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 12px;
+    border-radius: 10px;
+    color: #000;
     font-weight: 500;
-    padding: 6px 0;
     text-decoration: none;
+  }
+
+  .site-header__mobile-link:hover,
+  .site-header__mobile-link:focus-visible {
+    background: $color-card-bg;
   }
 
   .catalog-mega {
     display: none;
+  }
+
+}
+
+@include mq-down($breakpoint-tablet) {
+
+  .logo__image {
+    width: 115px;
+  }
+
+  .site-header__logo {
+    margin-left: 0;
+  }
+
+  .site-header__burger {
+    width: 32px;
+    height: 32px;
+  }
+
+  .search-form__input {
+    height: 40px;
+  }
+
+  .site-header__main {
+    padding-bottom: 0;
+  }
+
+  .section__title {
+    font-size: 25px;
   }
 }

@@ -31,11 +31,3 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-@include mq-down($breakpoint-mobile) {
-  .grid--products,
-  .grid--categories,
-  .grid--services {
-    grid-template-columns: 1fr;
-  }
-}

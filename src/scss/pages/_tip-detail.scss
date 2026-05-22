@@ -128,7 +128,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .tip-detail-page__title {
     margin-bottom: 24px;
   }
@@ -155,6 +155,25 @@
   }
 
   .tip-detail-page__related-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tip-detail-page__content {
+    font-size: 16px;
+  } 
+
+  .tip-detail-page__content p {
+    margin-bottom: 10px;
+  }
+
+  .tip-detail-page__button {
+    font-size: 16px;
   }
 }
+
+@include mq-down($breakpoint-mobile) {
+  .tip-detail-page__related-title {
+    font-size: 25px;
+  }
+}
+

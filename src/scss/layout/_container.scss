@@ -4,15 +4,9 @@
 .container {
   max-width: $container-xl;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .container--narrow {
   max-width: $container-lg;
 }
-
-@include mq-down($breakpoint-mobile) {
-  .container {
-    padding: 0 $container-padding-mobile;
-  }
-}
-

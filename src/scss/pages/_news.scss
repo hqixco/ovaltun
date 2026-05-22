@@ -246,9 +246,9 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .news-page__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 
@@ -258,5 +258,18 @@
 
   .promotions-card__title {
     font-size: 15px;
+  }
+
+  .news-page__title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .news-page__breadcrumbs {
+    margin-bottom: 20px;
+  }
+
+  .news-card__date {
+    font-size: 14px;
   }
 }

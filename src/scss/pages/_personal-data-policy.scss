@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@include mq-down($breakpoint-tablet) {
   .policy-page {
     padding-bottom: 48px;
   }

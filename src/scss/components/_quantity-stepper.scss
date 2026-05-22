@@ -17,6 +17,12 @@
   color: $color-brand;
 }
 
+.quantity-stepper__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
 .quantity-stepper__input {
   width: 36px;
   height: 44px;
