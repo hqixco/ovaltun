@@ -684,21 +684,23 @@
 
 @include mq-down($breakpoint-tablet) {
   .home-categories__viewport {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
   }
 
   .home-categories__grid {
     display: flex;
     width: max-content;
     gap: 12px;
-    will-change: transform;
-    cursor: grab;
+    padding-bottom: 6px;
     user-select: none;
-    touch-action: pan-y;
   }
 
-  .home-categories__grid.is-dragging {
-    cursor: grabbing;
+  .home-categories__viewport::-webkit-scrollbar {
+    display: none;
   }
 
   .home-category-card {
@@ -715,6 +717,14 @@
 
   .home-category-card__title {
     font-size: 18px;
+  }
+
+  .home-hero__inner {
+    align-items: start;
+  } 
+
+  .home-hero__banner-image {
+    object-position: 80%;
   }
 }
 

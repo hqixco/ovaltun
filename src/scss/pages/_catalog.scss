@@ -48,7 +48,7 @@
     padding-top: 20px;
   }
 
-  .catalog-category__sidebar-title {
+  .catalog-category__sidebar-title { 
     font-size: 18px;
   }
 
@@ -73,7 +73,7 @@
 
 @include mq-down($breakpoint-mobile) {
   .catalog h1 {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .catalog .section--compact {

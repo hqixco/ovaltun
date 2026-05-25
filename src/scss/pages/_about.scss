@@ -87,6 +87,8 @@
 .about-page__partners-inner {
   display: grid;
   gap: 13px;
+  min-width: 0;
+  padding: 0 20px;
 }
 
 .about-page__section-title {
@@ -112,22 +114,41 @@
 }
 
 .about-page__partners-logos {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: flex;
   gap: 16px;
   margin-top: 7px;
-  padding: 0 20px;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
+  box-sizing: border-box;
+}
+
+.about-page__partners-logos::-webkit-scrollbar {
+  display: none;
 }
 
 .about-logo {
   display: flex;
+  flex: 0 0 clamp(168px, 18vw, 240px);
+  min-width: 0;
   align-items: center;
   justify-content: center;
   min-height: 154px;
-  width: 100%;
   border-radius: 10px;
   background: $color-white;
   box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.about-page__partners-slider,
+.about-page__partners-viewport {
+  width: 100%;
+  min-width: 0;
 }
 
 .about-logo__image {
@@ -361,10 +382,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-page__partners-logos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .about-page__history-viewport {
     overflow: visible;
   }
@@ -404,8 +421,7 @@
     margin-bottom: 56px;
   }
 
-  .about-page__stats,
-  .about-page__partners-logos {
+  .about-page__stats {
     grid-template-columns: 1fr;
   }
 
@@ -418,7 +434,6 @@
   }
 
   .about-page__image,
-  .about-page__range-gallery,
   .about-page__cards-image {
     min-height: 260px;
   }
@@ -477,7 +492,15 @@
 
   .about-page__partners-text {
     font-size: 16px;
-    padding: 0 20px;
+  }
+
+  .about-page__partners-inner {
+    padding: 0 16px;
+  }
+
+  .about-logo {
+    flex-basis: clamp(150px, 42vw, 190px);
+    min-height: 132px;
   }
 
   .about-page__history-slider {
@@ -510,9 +533,18 @@
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
+  .about-page__partners-logos {
+    gap: 12px;
+  }
+
+  .about-logo {
+    flex-basis: calc((100% - 12px) / 2);
+    min-height: 120px;
+  }
+
   .about-page__range-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-page__range-gallery-column {

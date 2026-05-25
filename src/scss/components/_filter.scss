@@ -27,10 +27,14 @@
   @include flex-center;
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 50%;
   background: $color-card-bg;
   color: $color-brand;
   font-size: 22px;
+  appearance: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  flex: 0 0 auto;
 }
 
 .filter__group + .filter__group {

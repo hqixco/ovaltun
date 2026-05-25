@@ -17,6 +17,10 @@ export function initDragScroll() {
       return;
     }
 
+    if (viewport.classList.contains('home-categories__viewport') && window.matchMedia('(pointer: coarse)').matches) {
+      return;
+    }
+
     const getBounds = () => {
       const maxOffset = 0;
       const minOffset = viewport instanceof HTMLElement ? Math.min(0, viewport.clientWidth - track.scrollWidth) : 0;

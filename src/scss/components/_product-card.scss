@@ -171,24 +171,26 @@
   stroke: currentColor;
 }
 
-.product-card:hover {
-  transform: translateY(-2px);
-}
-
 .product-card__media,
 .product-card__favorite,
 .product-card__button {
   transition: 0.2s ease;
 }
 
-.product-card__button:hover {
-  background: $color-brand;
-  color: $color-white;
-}
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-2px);
+  }
 
-.product-card__favorite:hover {
-  border-color: #f04438;
-  color: #f04438;
+  .product-card__button:hover {
+    background: $color-brand;
+    color: $color-white;
+  }
+
+  .product-card__favorite:hover {
+    border-color: #f04438;
+    color: #f04438;
+  }
 }
 
 @media (max-width: 420px) {
