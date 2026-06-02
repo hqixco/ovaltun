@@ -618,11 +618,15 @@
 
   .product-tabs__nav {
     gap: 28px;
-    overflow-x: auto;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 
   .product-tabs__button {
+    min-width: 0;
+    flex: 1 1 calc(50% - 14px);
+    white-space: normal;
+    text-align: center;
     font-size: 18px;
   }
 
@@ -790,6 +794,7 @@
   }
 
   .product-tabs__button {
+    flex-basis: calc(50% - 8px);
     padding-bottom: 9px;
     font-size: 16px;
   }
