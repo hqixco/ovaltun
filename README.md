@@ -1,6 +1,4 @@
-# Ovaltun HTML Starter
-
-Стартовый проект для ручной верстки по Figma на `Vite + HTML + SCSS + Vanilla JS`.
+# Ovaltun HTML
 
 ## Запуск
 
